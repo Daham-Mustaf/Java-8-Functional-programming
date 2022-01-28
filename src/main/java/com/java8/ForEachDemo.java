@@ -41,5 +41,6 @@ public class ForEachDemo {
         }
         // java 8
         list.stream().filter(t->t.startsWith("C")).forEach(ma -> System.out.println("Filterd: "+ma));
+        map.entrySet().stream().filter(key-> key.getKey()%2 ==0).forEach(System.out::println);
     }
 }
