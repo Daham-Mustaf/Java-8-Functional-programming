@@ -20,5 +20,10 @@ public class MapReduceDemo {
         int sumReduce = numbers.stream().reduce(0, (a,b)-> a+b);
         System.out.println("sumReduce is :"+ sumReduce);
 
+        int multiplyReduce = numbers.stream().reduce(1, (a,b)-> a*b);
+        System.out.println("multiplyReduce is :"+ multiplyReduce);
+        int maxValue = numbers.stream().reduce(0, (a,b)-> a > b ? a : b);
+        System.out.println("max Value is :"+ maxValue);
+
     }
 }
