@@ -29,5 +29,6 @@ public class MapSorting {
 
         // stream Apis
         map.entrySet().stream().sorted((o1,o2)-> o1.getKey().compareTo(o2.getKey())).forEach(System.out::println);
+        map.entrySet().stream().sorted(Map.Entry.comparingByValue()).forEach(System.out::println);
     }
 }
