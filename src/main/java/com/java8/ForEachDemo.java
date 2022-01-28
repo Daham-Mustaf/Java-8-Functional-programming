@@ -22,5 +22,6 @@ public class ForEachDemo {
         map.put(2, "C++");
         map.put(3, "R");
         map.forEach((key, value)-> System.out.println(key + ": "+ value));
+        map.entrySet().stream().forEach(ma -> System.out.println(ma));
     }
 }
