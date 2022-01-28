@@ -17,7 +17,7 @@ public class MapVsFlatMap {
         List<List<String>> phons =studentList.stream().map(student -> student.getPhoneNumbers()).collect(Collectors.toList());
         System.out.println(phons); // [[123, 342], [4555, 342], [123, 342]]
 
-        // flating data
+        // flatting data
         List<String> phone=
                 studentList.stream().flatMap(student -> student.getPhoneNumbers().stream()).collect(Collectors.toList());
         System.out.println(phone);
