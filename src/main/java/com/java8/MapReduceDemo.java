@@ -16,5 +16,9 @@ public class MapReduceDemo {
        int sumOfStream= numbers.stream().mapToInt(i->i).sum();
         System.out.println(sumOfStream);
 
+        // reduce method
+        int sumReduce = numbers.stream().reduce(0, (a,b)-> a+b);
+        System.out.println("sumReduce is :"+ sumReduce);
+
     }
 }
