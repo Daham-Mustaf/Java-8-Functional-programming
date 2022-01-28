@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class ForEachDemo {
     public static void main(String[] args) {
@@ -15,6 +16,13 @@ public class ForEachDemo {
         for(String s : list){
             System.out.println(s);
         }
+
+        // how for each works internally ?
+        Consumer<String> consumer = (t)-> System.out.println(t);
+        for(String s : list){
+            consumer.accept(s);
+        }
+
         // java 8
         list.stream().forEach(System.out::println);
         Map<Integer, String> map = new HashMap<>();
@@ -23,5 +31,15 @@ public class ForEachDemo {
         map.put(3, "R");
         map.forEach((key, value)-> System.out.println(key + ": "+ value));
         map.entrySet().stream().forEach(ma -> System.out.println(ma));
+
+        // Filter out base on condensional check
+        // traditional java filter
+        for(String s : list){
+            if(s.startsWith("J")){
+            System.out.println("Filter -->"+ s);
+        }
+        }
+        // java 8
+        list.stream().filter(t->t.startsWith("C")).forEach(ma -> System.out.println("Filterd: "+ma));
     }
 }
