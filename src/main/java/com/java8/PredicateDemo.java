@@ -1,5 +1,6 @@
 package com.java8;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 public class PredicateDemo implements Predicate<Integer> {
@@ -28,5 +29,8 @@ public class PredicateDemo implements Predicate<Integer> {
 
         Predicate<Integer> predicate3 = integer -> integer % 2 == 0;
         System.out.println(predicate3.test(9));
+
+        List<Integer> list = List.of(1,2,3,4);
+        list.stream().filter(t-> t % 2 == 0).forEach(t-> System.out.println("Print even :"+ t));
     }
 }
