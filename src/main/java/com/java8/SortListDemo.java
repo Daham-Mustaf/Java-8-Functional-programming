@@ -1,9 +1,6 @@
 package com.java8;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class SortListDemo {
     public static void main(String[] args) {
@@ -17,6 +14,10 @@ public class SortListDemo {
         System.out.println(list);
         Collections.reverse(list);
         System.out.println(list);
+
+        // java 8
+        list.stream().sorted().forEach(s-> System.out.println("Assending order: "+ s));
+        list.stream().sorted(Comparator.reverseOrder()).forEach(s-> System.out.println(s));
 
     }
 }
