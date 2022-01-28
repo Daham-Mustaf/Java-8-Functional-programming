@@ -26,5 +26,8 @@ public class MapSorting {
         for(Map.Entry<Integer, String> s: entryList){
             System.out.println(s);
         }
+
+        // stream Apis
+        map.entrySet().stream().sorted((o1,o2)-> o1.getKey().compareTo(o2.getKey())).forEach(System.out::println);
     }
 }
