@@ -13,5 +13,7 @@ public class ForEachDemo {
         for(String s : list){
             System.out.println(s);
         }
+        // java 8
+        list.stream().forEach(System.out::println);
     }
 }
